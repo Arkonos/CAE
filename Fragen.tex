@@ -18,21 +18,96 @@
 \subsection{CAx - Methoden}
 	\item Semi empirisch-/physikalische Modelle/Simulation\\
 		P.1 F.69
+		\begin{itemize}
+			\item empirisch: keine mathematische Beschreibung, Annäherungen durch Messung
+			\item physikalisch: physikalische Regeln und Axiome, mathematische Beschreibung eines Prozesses, numerische Lösung, Vorteil: physikalische Bedeutung
+			\item semi-empritisch: empirisch+physikalisches Modell zusammen
+		\end{itemize}
 	\item Kirchhoff'sche Einteilung der Modellierung\\
 		P.1 F.71
+		\begin{center}
+			\begin{tabular}{|c|c|c|}
+			\hline 
+			System & vernachlässigte Kräfte & angewante Kräfte \\ 
+			\hline 
+			unbewegt & Geometrie, CAD & (Elasto-)Statik, FEM, BEM \\ 
+			\hline
+			bewegt & Kinematik, CAD, MBS & Dynamik, MBS, FEM \\ 
+			\hline 
+			\end{tabular} 
+		\end{center}
 	\item Welche Arten von Diskretisierung?\\
 		P.1 F.72
+			\begin{itemize}
+				\item Diskretisierung von Dichte, Steifheit, Viskosität
+				\item Dimensionen: unendlich $\rightarrow$ endlich
+			\end{itemize}
 	\item Welche Unterschiede zwischen den Typen
+	
 \subsection{Cax - Workflows}
 	\item Workflows beschreiben, Wie/Was läuft ab.
 		P.1 F.88
+			\begin{itemize}
+				\item DMU (Digital Mock Up)
+					\begin{itemize}
+						\item ditigale Dummies die eine vereinfachte Darstellung des Produktes beinhalten
+						\item inkludierte Information
+							\begin{itemize}
+								\item Produkt Geometrie (Volumen und/oder Oberflächen)
+								\item Produktstruktur
+							\end{itemize}
+						\item dienen Kollisionsüberprüfung, Simulation von Zusammenbau und Montage, $\dots$
+						\item Als Grundlage für DMUs dienen vereinfachte 3D-CAD Daten des virtuellen Produkt Modells.
+						\item Durch die Vereinfachung ist die Genauigkeit des Modells reduziert.
+						\item Im DMU Prozess ist eine direkte Änderung der Geometrie nicht möglich.
+						
+					\end{itemize}
+				\item FEM (Finite Elemente Methode)
+					\begin{itemize}
+						\item Genutzt für Belastungs-/, Deformations-/, Schwiungs-/, Themodynamikberechnungen
+						\item FEM Berechnungen basieren auf einer angenäherten Geometrie, abgeleited von einem 3D-CAD Modell. Abhängig vom Ziel der Simulation werden verschiedene Annäherungen vorgenommen.
+						\item Der Datentransfer vom 3D-CAD Modell uns FE-Programm erfolgt mit einem Diskretisierungsprozess
+						\item Randbedigungen der Lasten (Kräfte, Momente, $\dots$), Einschränkungen (fixe Komponenten, Lager, $\dots$), Materialeigenschaften, Temperatur, etc. werden im FEM-Programm definiert.
+						\item Nach der Simulation wird das Resultat ausgewertet. Änderungen werden an der master-Geometrie im 3D-CAD Programm und nicht in der FEM-Software vorgenommen.
+					\end{itemize}
+				\item CFD (Computational Fluid Dynamics)
+					\begin{itemize}
+						\item CFD-Simulationen ermöglichen die Berechnung und Optimierung von Gas- und Flüssigkeitsströmungen.
+						\item Ähnlichen den FEM-Berechnungen wird die Geometrie mit einem mesh angenähert.
+						\item Datentransfer von 3D-CAD Modell zu CFD-Programm wird mit neutralen, standardisierten Datenformaten (STEP, IGES, $\dots$) vorgenommen
+						\item Randbedingungen werden direkt im CFD-Programm festgelegt.
+						\item Nach der Simulation wird das Resultat ausgewertet. Änderungen werden an der "Master-" Geometrie im 3D-CAD Programm und nicht in der CFD-Software vorgenommen.
+					\end{itemize}
+				\item MBS (Mehrkörpersimulation)
+					\begin{itemize}
+						\item Genutzt für kinematische Berechnungen und Optimierung des zusammengebauten und beweglichen Produkts.
+						\item Das MBS-Modell basiert auf der CAD-Produkt-Struktur, wobei Körper, Verbindungen und Gelenke als Starrkörper angesehen werden. 
+						\item Randbedingungen (Kräfte, Momente, Massen, Freiheitsgrade der Bewegung) werden im MBS-Programm definiert.
+						\item MBS Modelle setzen sich aus vereinfachten geometrischen Elementen zusammen welche die relevanten Daten für die kinematische Berechnung beinhalten.
+						\item Nach der Simulation wird das Resultat ausgewertet. Änderungen werden an der "Master-" Geometrie im 3D-CAD Programm und nicht in der MBS-Software vorgenommen.
+					\end{itemize}
+			\end{itemize}
 	\item Prozessworkflow CAD-VR
 		P.1 F.101
+		\begin{itemize}
+			\item Virtual Reality beschreibt eine computergenerierte Umgebung welche als Benutzerinterface fungiert.
+			\item VR basierte Studien inkludieren den Nutzer in die virtuelle Umgebung
+			\item Echtzeit Interaktionen der Geometrie / Funktionalität unterstützen eine Beurteilung des Modells
+			\item Die Vorstellung des der Manipulierbarkeit ermöglicht eine lebensnahe Erfahrung des virtuellen Produkts.
+			\item Das VRML-Datenformat (Virtual REality Modeling Language, 1994) wurde entwickelt um 3D-Modelle darzustellen und Nutzerbasierte Interaktionen zu integrieren.
+			\item VRML-Daten, welche vom 3D-CAD master-Modell abgeleitet werden inkludieren vereinfachte Geometrien ausschließlich in aktueller Ausführung, ohne Verlaufsdaten.
+		\end{itemize}
 \subsection{Product Data Management}
 	\item Was ist PDM?\\
 		P.1 F.112
+		PDM (Product Data Management) beinhaltet alle Aufgaben einer Organisationseinheit für die Identifizierung, Bereitstellung, Archivierung von produktrelevanten Daten während der Produktentwicklung.
 	\item Warum PDM?\\
 		P.1 F.113-115
+		\begin{itemize}
+			\item Hilft Organisationen den Daten- und Informationsfluss während des Entwicklungsprozesses zu organisieren.
+			\item Die Verwaltung des Daten-, Prozess-, und Dokumentenstroms über den gesamten Lebenszyklus bilden die Grundlage für die virtuelle Produktentwicklung.
+			\item Komplexe Produktstrukturen oder Variationen erzeugen zahlreiche Parameter und Informationen. Ein leistungsstarkes PDM System unterstützt den Datenaustausch zwischen den verschiedenen Phasen der Entwicklung.
+		\end{itemize}
 	\item Concepts of the virtual product development\\
 		P.1 F.116
 	\item Nennen Sie Daten die in einem PDM System verwaltet werden können
@@ -41,37 +116,114 @@
 			\item 2D-Zeichnungen
 			\item Produktstruktur
 			\item Ergebnisse von Analysen
-			\item Dokumente (Produkt Daten?)
+			\item Dokumente
 		\end{itemize}
 	\item Hauptfunktionen PDM\\
 		P.1 F.119
+		\begin{itemize}
+			\item Produktstruktur-management
+			\item Workflow-management
+			\item Projekt-management
+			\item Dokument-management
+			\item Klassifikation / Varianten
+			\item Beziehungen untereinander: Personen $\Leftrightarrow$ Prozesse $\Leftrightarrow$ Teile $\Leftrightarrow$ Dokumente $\Leftrightarrow$ Daten
+		\end{itemize}
 \newpage
 \section{Computer-Aided Design (CAD)}
 \subsection{Geometrical representation models in CAD}
 	\item Element Typen\\
 		P.2 F.13-29
 	 	\begin{itemize}
-	 		\item Drahtgitter
-	 		\item Flächen
-	 		\item Solid
+	 		\item Drahtgitter: Punkte und Kurven definieren 2D- und 3D-Objekte
+	 		\item Flächen: Ebene und gewölbte Flächen im $\mathbb{R}^3$
+	 		\item Solid: Ermöglicht komplette geometrische Darstellung von realen Produkten in virtueller Umgebung
+	 			\begin{itemize}
+	 				\item Schalengeometrie: geschlossene Schalten $\rightarrow$ Solid
+	 				\item Unterscheidung zwischen Innen und Außerhalb des Solids
+	 				\item Definition Materialeigenschaften (für Simulationen)	 			
+	 			\end{itemize}
+	 		\item Hybride Modelle
 	 	\end{itemize}
-	 \item Anwendung von Bool'schen Operationen bezogen auf Produktion\\
-	 	P.2 F.25,27
 	 \item Was ist ein Skelettmodell\\
 	 	P.2 F.14
+	 	s.o.
 	 \item Wie wird es angewandt?
+	 \item Anwendung von Bool'schen Operationen bezogen auf Produktion\\
+	 	P.2 F.25,27
+	 	\begin{itemize}
+	 		\item Vereinigungs Operator (A$\cup$B)
+	 		\item Subtraktions Operator (A$ - $B)
+	 		\item Schnittmenten Operator (A$\cap$B)
+	 	\end{itemize}
+	 	Anstatt nach und nach das gewünschte Objekt zu erstellen wird das Negativ konstruiert und von einer Grundform abgezogen. Zur Zeit übliche Vorgangsweise.
+	
 \subsection{Parametric-associative design}
 	 \item Was ist parametrische Konstruktion\\
 	 	P.2 F.31
+	 	\begin{itemize}
+	 		\item parametrische Konstruktion verbindet geometrische Objekte mit geometrischen Beschränkungen und Maßangaben
+	 		\item Veränderungen der Geometrie durch Änderung der Eingabewerte der dazugehörigen Beschränkungen
+	 		\item Assoziative Konstruktionsoperationen schließen Beziehungen und Abhängigkeiten zwischen geometrischen Objekten direkt ein. Diese geometrischen Verbindungen sind als Teil des Kontruktionsprozesses definiert und erstellen Eltern-Kind Beziehungen oder Verhältnisse mehrerer Geometrien zum selben Parameter, zu den selben Parametern.
+	 		\item Moderne CAD Systeme bieten Mehr-Modell-Verknüpfungen, welche die Definition assoziativer Funktionalität zwischen (vormals unabhängigen) Teilen in Baugruppen anbietet.
+	 	\end{itemize}
 	 \item Parametrische Beschreibung\\
 	 	P.2 F.32
+	 	\begin{itemize}
+	 		\item Virtuelle Produkt
+	 			\begin{itemize}
+	 				\item Parameter
+	 					\begin{itemize}
+	 						\item geometische Parameter (Koordinaten, Dimensionen, $\dots$)
+	 						\item Material Parameter (Dichte, Festigkeit, Rauheit, $\dots$)
+	 						\item Technologische Parameter (Vorschub, Schnittgeschwindigkeit, $\dots$)
+	 					\end{itemize}
+	 				\item Beschränkungen
+	 					\begin{itemize}
+	 						\item geometische Beschränkungen (absolute und relative Positionen, Orientierungen, $\dots$)
+	 						\item Ingenieurliche(?) Beschränkungen (funktional / logisch)
+	 					\end{itemize}
+	 				\item strukturelle Parameter
+	 					\begin{itemize}
+	 						\item Struktur der Montagegruppen
+	 						\item Struktur der Teile
+	 					\end{itemize}
+	 			\end{itemize}
+	 	\end{itemize}
 	 \item Herausforderungen bei parametrischer Konstruktion\\
 	 	P.2 F.43
+	 	\begin{itemize}
+	 		\item Ingenieure tendieren zu unterschiedlicher Implementation von Methoden
+	 		\item parametrische Modelle werden komplexe, intrasparente Strukturen
+	 		\item Mehr-Modell-Verknüpfungen (Assoziationen zwischen Modellen) können zu Organisationsproblemen führen
+	 		\item erhöhtes Datenvolumen, vor allem bei unterschiedlichem Datenstand
+	 		\item komplexe Verknüpfungen führen zu umfangreicher Datenverarbeitung
+	 		\item komplexe Verknüpfungen führen zu "Referenzierung im Kreis" $\rightarrow$ logische Probleme
+	 		\item parametrische Modelle enthalten Expertenwissen $\rightarrow$ Problem des Wissenstransfer
+	 	\end{itemize}
 \subsection{Knowledge based design}
 	\item Was sind Wissensträger?\\
 		P.2 F.46
+		\begin{itemize}
+			\item Skizzen
+			\item Parameter, Beziehungen, Regeln, Schemen
+			\item Benutzer-features
+			\item Modell Verlauf
+			\item Vorlagen Modelle
+			\item Startup models
+			\item Produktstruktur
+			\item Attribute und Anmerkungen
+			\item DMU - Funktionalität (z. B. kinematische Simulation)
+			\item $\dots$
+		\end{itemize}
 	\item Welche Arten von Wissensträger gibt es?\\
 		P.2 F.47
+		\begin{itemize}
+			\item Modelle mit fixer Geometrie
+			\item Modelle mit variabler Geometrie
+			\item Integration von mathematischen / logischen Beziehungen
+			\item automatisierte Abläufe für die geometrische Erzeugung oder berechnende Prozeduren
+			\item interaktive Programme
+		\end{itemize}
 	\item Was ist ein Template?
 %	\item Adapive Modelle z.B. 
 	\item Levels of knowledge content in CAD models\\
