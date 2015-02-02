@@ -316,66 +316,103 @@
 \section{Virtuelle Entwicklung mechatronischer Produkte}
 \subsection{Einleitung - Mechatronik}
 	\item Was ist Mechatronik?\\
-		P.3 F.3-4
+		P.3 F.3-4\\
+		Die Mechatronik beschreibt technische Systeme, welche sich aus mechanischen, elektrischenund elektronischen Komponenten zusammensetzen.
 	\item Randbedingung, was ist kritisch\\
-		P.3 F.8
+		P.3 F.8\\
+			\begin{tabular}{|l|l|}
+			\hline 
+			Äußere Randbedingungen & Innere Randbedingungen \\ 
+			\hline 
+			\pbox{20cm}{kurze Lebensdauer \\ mechatronischer Produkte/ \\ schneller Modellwechsel} & \pbox{20cm}{fehlende domäneübergreifende \\ Spezifikation der Produkte \\ (Beschreibungssprache)} \\ 
+			\hline 
+			\pbox{20cm}{hohe Zahl von Varianten \\ (Kundenwünsche) } & \pbox{20cm}{unterschiedliche Entwicklungsmethoden \\ und IT Werkzeuge in den Domänen  } \\ 
+			\hline 
+			\pbox{20cm}{Produkte müssen zuverlässiger \\ werden (Wettbewerb) } & \pbox{20cm}{ Fehlende gemeinsame Simulatino \\ der zu entwickelnden Produkte } \\ 
+			\hline 
+			\pbox{20cm}{ Entwicklungskosten müssen \\ gesenkt werden (Wettbewerb) } &  Hohe Produktkomplexität \\ 
+			\hline 
+			\end{tabular} 
 	\item V-Modell!\\
-		P.3 F.15
+		P.3 F.15\\
+		\includegraphics[scale=0.5]{v.png}
 \subsection{Komponenten mechatronischer Systeme}
 	\item Übersicht Komponenten\\
 		P.3 F.17
+		\includegraphics[scale=0.4]{komponenten.png}
 	\item Aufbau Regelkreis\\
-		P.3 F.18
+		P.3 F.18\\
+		\includegraphics[scale=0.5]{regelkreis.PNG}
 	\item Definition Aktor, Sensor, Prozessdatenverarbeitung
 		\begin{itemize}
-		 	\item Aktoren: P.3 F.19-23
-		 	\item Sensoren: P.3 F.24-28
-		 	\item Prozessdatenverarbeitung: P.3 F.30
+		 	\item Aktoren: P.3 F.19-23\\
+		 		Technisch gesehen versteht man unter einem Aktor die Zusammenschaltung eines Energiewandlers mit einem Leistungsstellglied.\\
+		 		Das Leistungsstellglied verbindet die eingehende Energie (in der Regel elektrische Energie) mit dem Stellsignal. Es entsteht eine modulierte Energie, die vom Wandler in die Energieart der Stellgröße (meist mechanische Energie) transformiert wird.\\
+				In mechatronischen Systemen stellen Aktoren das Bindeglied zwischen der Informationsverarbeitung und dem mechanischen Grundsystem dar.
+		 	\item Sensoren: P.3 F.24-28\\
+		 		Sensoren wandeln die zu messenden physikalischen oder chemischen Größen in elektrische Signale um.\\
+				Ein Signal stellt in diesem Sinne eine zeitvariable, physikalische oder chemische Zustandsgröße (z.B. Druck, Temperatur, Kraft, usw.) als zeitliche Abfolge von Messwerten dar.\\
+				Funktional besteht ein Sensor aus
+					\begin{itemize}
+						\item einem Sensorelement, das die Messgröße in ein elektrisches Signal umwandelt, und
+						\item einer Signalverarbeitung, die ein genormtes elektrisches Ausgangssignal liefert
+					\end{itemize}
+				Somit sind Sensoren Komponenten, welche ein im allgemeinen nicht elektrisches Signal (Messignal) in ein elektrisches Signal umwandeln.
+		 	\item Prozessdatenverarbeitung: P.3 F.30\\
+				Die Verarbeitung von Prozessdaten erfolgt in den meisten Fällen in Mikroprozessoren. Hier werden in Abhängigkeit der Komplexität der mechatronischenSysteme verschiedene Anforderungen gestellt. \\
+				\textbf{Echtzeitdatenverarbeitung:} Systeme sind echtzeitfähig wenn sie in der Lage sind, unabhängig von Art und Umfang des gerade bearbeiteten Problems auf ein zu beliebiger Zeit auftretendes Ereignis höherer Dringlichkeit spätestens nach Ablauf einer definierbaren maximalen Reaktionszeit $\text{t}_{\text{Rmaxin}}$ programmierbarer Weise zu reagieren. Die Reaktionszeit bezeichnet dabei die Zeit, die der Rechner benötigt bis der Task gerechnet werden kann.\\
+				\textbf{Multitasking:} Dieses Verfahren ermöglichen die Berücksichtigung mehrerer Prozesse/ Threads durch den Prozessor. Die Verwaltung einer hohen Zahl von Tasks muss für die höchstpriorisierten Tasks ohne Auswirkungen bleiben. Synchronisationsmechanismen, die den Tasks erlauben, ihre Aktivitäten gegenseitig abzustimmen, müssen optimiert werden.\\
+				\textbf{Multiprocessing:} Es gibt 3 Kategorien von Multiprocessing		
+					\begin{itemize}
+						\item Heterogene Architekturen: Die Prozessoren übernehmen verschiedenartige Aufgaben und sind oft auch nicht vom gleichen Typ.
+						\item Lose gekoppelte Architekturen: Die Prozessoren besitzen eigene Speicher, sind jedoch über schnelle Datenverbindungen gekoppelt.
+						\item Eng gekoppelte Architekturen: Die Prozessoren sind gleichartig und teilen sich auch den Speicherbereich.
+					\end{itemize}
 		 \end{itemize}
 \subsection{Hardware in the Loop (HiL) / Software in the Loop (SiL)}
 	\item Was ist SiL/HiL, wie wird es angewandt.\\
 		P.3 F.32-37
-%		\begin{itemize}
-%			\item \textbf{Hardware in the Loop (HiL)}
-%				Hardware in the Loop (HIL) ist eine Methode zum Testen und Absichern von eingebetteten Systemen, zur Unterstützung während der Entwicklung sowie zur vorzeitigen Inbetriebnahme von Maschinen und Anlagen.
-%
-%				Bei Hardware in the Loop (HIL) wird ein reales System (z.B. reales elektronisches Steuergerät oder reale mechatronische Komponente) über seine Ein- und Ausgänge an ein angepasstes Gegenstück (HIL-Simulator) angeschlossen. Dabei übernimmt der HIL-Simulator die Nachbildung der realen Umgebung des Systems durch virtuelle Methoden.
-%				
-%				Bei HIL für eingebettete Systeme wird das zu steuernde System (z.B. Auto) über Modelle simuliert, um die korrekte Funktion des zu entwickelnden Steuergerätes (z.B. Motorsteuergerät) zu testen. Die HIL-Simulation muss meist in Echtzeit ablaufen und wird in der Entwicklung benutzt, um Entwicklungszeiten zu verkürzen und Kosten zu sparen.
-%				
-%				Insbesondere lassen sich wiederkehrende Abläufe simulieren. Dies hat den Vorteil, dass eine neue Entwicklungsversion unter den gleichen Kriterien getestet werden kann wie die Vorgängerversion. Somit kann detailliert nachgewiesen werden, ob ein Fehler beseitigt wurde oder nicht.
-%				
-%				Der HIL-Simulator besteht also aus einem Rechner, der die Echtzeitbedingungen der jeweiligen Anwendung erfüllen kann (zunehmend auch PC-basiert), digitale und analoge Ein-und Ausgabe-Schnittstellen zum Steuergerät und Ersatzlasten, die der steuergeräteinternen Endstufendiagnose simulieren, dass alle Aktuatoren korrekt angeschlossen seien.
-%				
-%				Die Tests an realen Systemen lassen sich dadurch stark verringern und zusätzlich lassen sich Systemgrenzen ermitteln, ohne das Zielsystem (z.B. Auto und Fahrer) zu gefährden.
-%				
-%				Die HIL-Simulation ist immer nur eine Vereinfachung der Realität und kann den Test am realen System deshalb nicht ersetzen. Falls zu große Diskrepanzen zwischen der HIL- Simulation und der Realität auftreten, sind die zugrundeliegenden Modelle in der Simulation zu stark vereinfacht. Dann müssen die Simulations-Modelle weiterentwickelt werden.
-%				
-%				Die Entwicklung mittels HIL ist mittlerweile in verschiedenen Branchen der mechatronischen Produktentwicklung vertreten, z.B. in der Automobilindustrie, der Luft- und Raumfahrt, sowie im Maschinen- und Anlagenbau.
-%				
-%				Beispiel für eine angewandte HIL-Entwicklungsmethodik in der Automobilindustrie. Das HIL-System simuliert dabei die Umgebung (Fahrzeug, Reifen, Straße) des realen Steuergerätes.
-%			
-%			\item \textbf{Software in the Loop (SiL)}
-%				Bei der Methode Software in the Loop (SIL) wird im Gegensatz zum HIL keine besondere Hardware eingesetzt. Das erstellte Modell der Software wird lediglich in den für die Zielhardware verständlichen Code umgewandelt (beispielsweise von einem MATLAB/ Simulink-Modell). Dieser Code wird auf dem Entwicklungsrechner zusammen mit dem simulierten Modell ausgeführt, anstatt wie bei Hardware in the Loop auf der Zielhardware zu laufen. Es handelt sich dabei also um eine Methode, die vor dem HIL anzuwenden ist.
-%				
-%				Vorteile von SIL sind unter anderem, dass die Zielhardware noch nicht feststehen muss, und dass die Kosten aufgrund der fehlenden Simulationsumgebung weitaus geringer ausfallen. Das hier benutzte Modell der Strecke kann auch beim HIL weiter verwendet werden, und somit die einzelnen Testläufe miteinander verglichen werden.
-%				
-%				Nachdem sowohl der Prozess, als auch die Regelung / Steuerung in der Simulation vorliegen, sind verschiedene Testszenarien denkbar. Wird der Regelungsalgorithmus unter Verwendung einer geeigneten Codegenerierung auf eine leistungsfähige Simulations-Hardware übertragen, kann der reale Prozess mit dem Regelungsalgorithmus betrieben werden, ohne, dass bereits an dieser Stelle ein Mikrokontroller oder Ähnliches mit den einhergehenden Nachteilen (Speicherplatzbeschränkung, begrenzte Prozessorleistung) eingesetzt werden müsste $\rightarrow$ "Software in the Loop".
-%		\end{itemize}
+		\begin{itemize}
+			\item \textbf{Hardware in the Loop (HiL)}
+				Hardware in the Loop (HIL) ist eine Methode zum Testen und Absichern von eingebetteten Systemen, zur Unterstützung während der Entwicklung sowie zur vorzeitigen Inbetriebnahme von Maschinen und Anlagen.
+
+				Bei Hardware in the Loop (HIL) wird ein reales System (z.B. reales elektronisches Steuergerät oder reale mechatronische Komponente) über seine Ein- und Ausgänge an ein angepasstes Gegenstück (HIL-Simulator) angeschlossen. Dabei übernimmt der HIL-Simulator die Nachbildung der realen Umgebung des Systems durch virtuelle Methoden.
+				
+				Bei HIL für eingebettete Systeme wird das zu steuernde System (z.B. Auto) über Modelle simuliert, um die korrekte Funktion des zu entwickelnden Steuergerätes (z.B. Motorsteuergerät) zu testen. Die HIL-Simulation muss meist in Echtzeit ablaufen und wird in der Entwicklung benutzt, um Entwicklungszeiten zu verkürzen und Kosten zu sparen.
+				
+				Insbesondere lassen sich wiederkehrende Abläufe simulieren. Dies hat den Vorteil, dass eine neue Entwicklungsversion unter den gleichen Kriterien getestet werden kann wie die Vorgängerversion. Somit kann detailliert nachgewiesen werden, ob ein Fehler beseitigt wurde oder nicht.
+				
+				Der HIL-Simulator besteht also aus einem Rechner, der die Echtzeitbedingungen der jeweiligen Anwendung erfüllen kann (zunehmend auch PC-basiert), digitale und analoge Ein-und Ausgabe-Schnittstellen zum Steuergerät und Ersatzlasten, die der steuergeräteinternen Endstufendiagnose simulieren, dass alle Aktuatoren korrekt angeschlossen seien.
+				
+				Die Tests an realen Systemen lassen sich dadurch stark verringern und zusätzlich lassen sich Systemgrenzen ermitteln, ohne das Zielsystem (z.B. Auto und Fahrer) zu gefährden.
+				
+				Die HIL-Simulation ist immer nur eine Vereinfachung der Realität und kann den Test am realen System deshalb nicht ersetzen. Falls zu große Diskrepanzen zwischen der HIL- Simulation und der Realität auftreten, sind die zugrundeliegenden Modelle in der Simulation zu stark vereinfacht. Dann müssen die Simulations-Modelle weiterentwickelt werden.
+				
+				Die Entwicklung mittels HIL ist mittlerweile in verschiedenen Branchen der mechatronischen Produktentwicklung vertreten, z.B. in der Automobilindustrie, der Luft- und Raumfahrt, sowie im Maschinen- und Anlagenbau.
+				
+				Beispiel für eine angewandte HIL-Entwicklungsmethodik in der Automobilindustrie. Das HIL-System simuliert dabei die Umgebung (Fahrzeug, Reifen, Straße) des realen Steuergerätes.
+			
+			\item \textbf{Software in the Loop (SiL)}
+				Bei der Methode Software in the Loop (SIL) wird im Gegensatz zum HIL keine besondere Hardware eingesetzt. Das erstellte Modell der Software wird lediglich in den für die Zielhardware verständlichen Code umgewandelt (beispielsweise von einem MATLAB/ Simulink-Modell). Dieser Code wird auf dem Entwicklungsrechner zusammen mit dem simulierten Modell ausgeführt, anstatt wie bei Hardware in the Loop auf der Zielhardware zu laufen. Es handelt sich dabei also um eine Methode, die vor dem HIL anzuwenden ist.
+				
+				Vorteile von SIL sind unter anderem, dass die Zielhardware noch nicht feststehen muss, und dass die Kosten aufgrund der fehlenden Simulationsumgebung weitaus geringer ausfallen. Das hier benutzte Modell der Strecke kann auch beim HIL weiter verwendet werden, und somit die einzelnen Testläufe miteinander verglichen werden.
+				
+				Nachdem sowohl der Prozess, als auch die Regelung / Steuerung in der Simulation vorliegen, sind verschiedene Testszenarien denkbar. Wird der Regelungsalgorithmus unter Verwendung einer geeigneten Codegenerierung auf eine leistungsfähige Simulations-Hardware übertragen, kann der reale Prozess mit dem Regelungsalgorithmus betrieben werden, ohne, dass bereits an dieser Stelle ein Mikrokontroller oder Ähnliches mit den einhergehenden Nachteilen (Speicherplatzbeschränkung, begrenzte Prozessorleistung) eingesetzt werden müsste $\rightarrow$ "Software in the Loop".
+		\end{itemize}
 \subsection{Computer aided software engineering (CASE)}
 	\item Upper-/Lower CASE\\
 	P.3 F.39-41
-%		Unter Computer-aided software engineering (CASE) versteht man den intensiven Einsatz IT-gestützter Werkzeuge für die Umsetzung einer Software-Konzeption. Ziel ist es, Software möglichst vollständig automatisiert aus fachlichen Beschreibungen (Vorgeben) zu erstellen.
-%		
-%		CASE-Tools sind Programme, die den Software-Ingenieur bei der Planung, dem Entwurf und der Dokumentation seiner Arbeitsergebnisse (Software) unterstützen. Ein wichtiger Bestandteil von CASE-Tools ist eine grafische Notationsweise, die der Visualisierung der Architektur des Software-Systems dient.
-%
-%		CASE-Tools sind oft in Entwicklungsumgebungen (IDEs) integriert; manchmal sind es auch eigenständige Applikationen, deren Fokus vollständig auf CASE liegt (ohne dabei die anderen typischen Elemente einer Entwicklungsumgebung anzubieten).
-%		
-%		\textbf{Upper-CASE}-Tools unterstützen die frühen (oberen) Phasen der IS-Entwicklung. Sie erlauben die rechnergestützte konzeptionelle Modellierung, beispielsweise mit Hilfe von Entity-Relationship-, \mbox{Funktionshierarchie-,} Datenflußdiagrammen usw.
-%
-%		\textbf{Lower-CASE}-Tools bestehen aus einem Satz von Programmgeneratoren, die aufgrund der erfassten Modelldaten selbständig den benötigten Programmcode für die gewünschten Anwendungen erzeugen.
-%		\includegraphics[scale=0.5]{UpperCASE.png}\\
-%		\includegraphics[scale=0.5]{LowerCASE.png}
+		Unter Computer-aided software engineering (CASE) versteht man den intensiven Einsatz IT-gestützter Werkzeuge für die Umsetzung einer Software-Konzeption. Ziel ist es, Software möglichst vollständig automatisiert aus fachlichen Beschreibungen (Vorgeben) zu erstellen.
+		
+		CASE-Tools sind Programme, die den Software-Ingenieur bei der Planung, dem Entwurf und der Dokumentation seiner Arbeitsergebnisse (Software) unterstützen. Ein wichtiger Bestandteil von CASE-Tools ist eine grafische Notationsweise, die der Visualisierung der Architektur des Software-Systems dient.
+
+		CASE-Tools sind oft in Entwicklungsumgebungen (IDEs) integriert; manchmal sind es auch eigenständige Applikationen, deren Fokus vollständig auf CASE liegt (ohne dabei die anderen typischen Elemente einer Entwicklungsumgebung anzubieten).
+		
+		\textbf{Upper-CASE}-Tools unterstützen die frühen (oberen) Phasen der IS-Entwicklung. Sie erlauben die rechnergestützte konzeptionelle Modellierung, beispielsweise mit Hilfe von Entity-Relationship-, \mbox{Funktionshierarchie-,} Datenflußdiagrammen usw.
+
+		\textbf{Lower-CASE}-Tools bestehen aus einem Satz von Programmgeneratoren, die aufgrund der erfassten Modelldaten selbständig den benötigten Programmcode für die gewünschten Anwendungen erzeugen.
+		\includegraphics[scale=0.5]{UpperCASE.png}\\
+		\includegraphics[scale=0.5]{LowerCASE.png}
 \end{enumerate}
 %
 %\newpage
