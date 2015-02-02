@@ -72,6 +72,7 @@
 						\item Randbedigungen der Lasten (Kräfte, Momente, $\dots$), Einschränkungen (fixe Komponenten, Lager, $\dots$), Materialeigenschaften, Temperatur, etc. werden im FEM-Programm definiert.
 						\item Nach der Simulation wird das Resultat ausgewertet. Änderungen werden an der master-Geometrie im 3D-CAD Programm und nicht in der FEM-Software vorgenommen.
 					\end{itemize}
+\pagebreak
 				\item CFD (Computational Fluid Dynamics)
 					\begin{itemize}
 						\item CFD-Simulationen ermöglichen die Berechnung und Optimierung von Gas- und Flüssigkeitsströmungen.
@@ -112,6 +113,7 @@
 		\end{itemize}
 	\item Concepts of the virtual product development\\
 		P.1 F.116
+\pagebreak
 	\item Nennen Sie Daten die in einem PDM System verwaltet werden können
 		\begin{itemize}
 			\item Geometriedaten
@@ -168,6 +170,7 @@
 	 		\item Assoziative Konstruktionsoperationen schließen Beziehungen und Abhängigkeiten zwischen geometrischen Objekten direkt ein. Diese geometrischen Verbindungen sind als Teil des Kontruktionsprozesses definiert und erstellen Eltern-Kind Beziehungen oder Verhältnisse mehrerer Geometrien zum selben Parameter, zu den selben Parametern.
 	 		\item Moderne CAD Systeme bieten Mehr-Modell-Verknüpfungen, welche die Definition assoziativer Funktionalität zwischen (vormals unabhängigen) Teilen in Baugruppen anbietet.
 	 	\end{itemize}
+\pagebreak
 	 \item Parametrische Beschreibung\\
 	 	P.2 F.32
 	 	\begin{itemize}
@@ -305,7 +308,9 @@
 	\item Wie werden komplexe Baugruppen organisiert? \\
 		P.2 F.59\\
 		Einteilung in Hierarchie-Ebenen\\
-		\includegraphics[scale=0.3]{hirarchie.png}
+		\begin{center}
+			\includegraphics[scale=0.3]{hirarchie.png}
+		\end{center}		
 	\item Methoden der Positionierung\\
 		P.2 F.61
 		\begin{enumerate}
@@ -313,6 +318,7 @@
 			\item Durch ein oder mehrerer Skelettmodelle
 			\item Relativ zu einem Referenzkoordinatensystem
 		\end{enumerate}
+\pagebreak
 \section{Virtuelle Entwicklung mechatronischer Produkte}
 \subsection{Einleitung - Mechatronik}
 	\item Was ist Mechatronik?\\
@@ -320,35 +326,44 @@
 		Die Mechatronik beschreibt technische Systeme, welche sich aus mechanischen, elektrischenund elektronischen Komponenten zusammensetzen.
 	\item Randbedingung, was ist kritisch\\
 		P.3 F.8\\
-			\begin{tabular}{|l|l|}
-			\hline 
-			Äußere Randbedingungen & Innere Randbedingungen \\ 
-			\hline 
-			\pbox{20cm}{kurze Lebensdauer \\ mechatronischer Produkte/ \\ schneller Modellwechsel} & \pbox{20cm}{fehlende domäneübergreifende \\ Spezifikation der Produkte \\ (Beschreibungssprache)} \\ 
-			\hline 
-			\pbox{20cm}{hohe Zahl von Varianten \\ (Kundenwünsche) } & \pbox{20cm}{unterschiedliche Entwicklungsmethoden \\ und IT Werkzeuge in den Domänen  } \\ 
-			\hline 
-			\pbox{20cm}{Produkte müssen zuverlässiger \\ werden (Wettbewerb) } & \pbox{20cm}{ Fehlende gemeinsame Simulatino \\ der zu entwickelnden Produkte } \\ 
-			\hline 
-			\pbox{20cm}{ Entwicklungskosten müssen \\ gesenkt werden (Wettbewerb) } &  Hohe Produktkomplexität \\ 
-			\hline 
-			\end{tabular} 
+			\begin{center}
+				\begin{tabular}{|l|l|}
+					\hline 
+					Äußere Randbedingungen & Innere Randbedingungen \\ 
+					\hline 
+					\pbox{20cm}{kurze Lebensdauer \\ mechatronischer Produkte/ \\ schneller Modellwechsel} & \pbox{20cm}{fehlende domäneübergreifende \\ Spezifikation der Produkte \\ (Beschreibungssprache)} \\ 
+					\hline 
+					\pbox{20cm}{hohe Zahl von Varianten \\ (Kundenwünsche) } & \pbox{20cm}{unterschiedliche Entwicklungsmethoden \\ und IT Werkzeuge in den Domänen  } \\ 
+					\hline 
+					\pbox{20cm}{Produkte müssen zuverlässiger \\ werden (Wettbewerb) } & \pbox{20cm}{ Fehlende gemeinsame Simulatino \\ der zu entwickelnden Produkte } \\ 
+					\hline 
+					\pbox{20cm}{ Entwicklungskosten müssen \\ gesenkt werden (Wettbewerb) } &  Hohe Produktkomplexität \\ 
+					\hline 
+				\end{tabular}
+			\end{center}
 	\item V-Modell!\\
 		P.3 F.15\\
-		\includegraphics[scale=0.5]{v.png}
+		\begin{center}
+			\includegraphics[scale=0.5]{v.png}
+		\end{center}
 \subsection{Komponenten mechatronischer Systeme}
 	\item Übersicht Komponenten\\
 		P.3 F.17
-		\includegraphics[scale=0.4]{komponenten.png}
+		\begin{center}
+			\includegraphics[scale=0.4]{komponenten.png}
+		\end{center}
 	\item Aufbau Regelkreis\\
 		P.3 F.18\\
-		\includegraphics[scale=0.5]{regelkreis.PNG}
+		\begin{center}
+			\includegraphics[scale=0.5]{regelkreis.PNG}
+		\end{center}		
 	\item Definition Aktor, Sensor, Prozessdatenverarbeitung
 		\begin{itemize}
 		 	\item Aktoren: P.3 F.19-23\\
 		 		Technisch gesehen versteht man unter einem Aktor die Zusammenschaltung eines Energiewandlers mit einem Leistungsstellglied.\\
 		 		Das Leistungsstellglied verbindet die eingehende Energie (in der Regel elektrische Energie) mit dem Stellsignal. Es entsteht eine modulierte Energie, die vom Wandler in die Energieart der Stellgröße (meist mechanische Energie) transformiert wird.\\
 				In mechatronischen Systemen stellen Aktoren das Bindeglied zwischen der Informationsverarbeitung und dem mechanischen Grundsystem dar.
+\pagebreak
 		 	\item Sensoren: P.3 F.24-28\\
 		 		Sensoren wandeln die zu messenden physikalischen oder chemischen Größen in elektrische Signale um.\\
 				Ein Signal stellt in diesem Sinne eine zeitvariable, physikalische oder chemische Zustandsgröße (z.B. Druck, Temperatur, Kraft, usw.) als zeitliche Abfolge von Messwerten dar.\\
@@ -406,13 +421,16 @@
 		
 		CASE-Tools sind Programme, die den Software-Ingenieur bei der Planung, dem Entwurf und der Dokumentation seiner Arbeitsergebnisse (Software) unterstützen. Ein wichtiger Bestandteil von CASE-Tools ist eine grafische Notationsweise, die der Visualisierung der Architektur des Software-Systems dient.
 
-		CASE-Tools sind oft in Entwicklungsumgebungen (IDEs) integriert; manchmal sind es auch eigenständige Applikationen, deren Fokus vollständig auf CASE liegt (ohne dabei die anderen typischen Elemente einer Entwicklungsumgebung anzubieten).
-		
-		\textbf{Upper-CASE}-Tools unterstützen die frühen (oberen) Phasen der IS-Entwicklung. Sie erlauben die rechnergestützte konzeptionelle Modellierung, beispielsweise mit Hilfe von Entity-Relationship-, \mbox{Funktionshierarchie-,} Datenflußdiagrammen usw.
-
-		\textbf{Lower-CASE}-Tools bestehen aus einem Satz von Programmgeneratoren, die aufgrund der erfassten Modelldaten selbständig den benötigten Programmcode für die gewünschten Anwendungen erzeugen.
-		\includegraphics[scale=0.5]{UpperCASE.png}\\
-		\includegraphics[scale=0.5]{LowerCASE.png}
+		CASE-Tools sind oft in Entwicklungsumgebungen (IDEs) integriert; manchmal sind es auch eigenständige Applikationen, deren Fokus vollständig auf CASE liegt (ohne dabei die anderen typischen Elemente einer Entwicklungsumgebung anzubieten).\\
+\newpage
+		\textbf{Upper-CASE}-Tools unterstützen die frühen (oberen) Phasen der IS-Entwicklung. Sie erlauben die rechnergestützte konzeptionelle Modellierung, beispielsweise mit Hilfe von Entity-Relationship-, \mbox{Funktionshierarchie-,} Datenflußdiagrammen usw.\\
+		\begin{center}
+			\includegraphics[scale=0.45]{UpperCASE.png}
+		\end{center}				
+		\textbf{Lower-CASE}-Tools bestehen aus einem Satz von Programmgeneratoren, die aufgrund der erfassten Modelldaten selbständig den benötigten Programmcode für die gewünschten Anwendungen erzeugen.\\
+		\begin{center}
+			\includegraphics[scale=0.45]{LowerCASE.png}
+		\end{center}		
 \end{enumerate}
 %
 %\newpage
