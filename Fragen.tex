@@ -11,6 +11,8 @@
 \usepackage{csquotes}
 \usepackage{pbox}
 \MakeOuterQuote{"}
+\usepackage{array}
+\renewcommand{\arraystretch}{1.8}
 \begin{document}
 %\setlength{\mathindent{2cm}}% you can set it back to 0cm (the default).
 \begin{enumerate}
@@ -28,11 +30,11 @@
 		\begin{center}
 			\begin{tabular}{|c|c|c|}
 			\hline 
-			System & vernachlässigte Kräfte & angewante Kräfte \\ 
+			System & vernachlässigte Kräfte & angewandte Kräfte \\ 
 			\hline 
-			unbewegt & Geometrie, CAD & (Elasto-)Statik, FEM, BEM \\ 
+			unbewegt & \pbox{20cm}{Geometrie\\ CAD} & \pbox{20cm}{(Elasto-)Statik \\ FEM, BEM} \\ 
 			\hline
-			bewegt & Kinematik, CAD, MBS & Dynamik, MBS, FEM \\ 
+			bewegt & \pbox{20cm}{Kinematik \\ CAD, MBS} & \pbox{20cm}{Dynamik \\  MBS, FEM} \\ 
 			\hline 
 			\end{tabular} 
 		\end{center}
@@ -224,18 +226,93 @@
 			\item automatisierte Abläufe für die geometrische Erzeugung oder berechnende Prozeduren
 			\item interaktive Programme
 		\end{itemize}
-	\item Was ist ein Template?
+	\item Was ist eine Template?
 %	\item Adapive Modelle z.B. 
 	\item Levels of knowledge content in CAD models\\
-		P.2 F.49
+		P.2 F.49\\
+		Ansteigender Wissengehalt\\
+		\begin{tabular}{l|l}
+			Art des CAD Modells & Anwendungsbeispiel \\ 
+			\hline 
+			\pbox{20cm}{1. neutrale Datenformate \\ \mbox{}\hspace{0.4cm}(IGES, STEP, etc.)} & Virtualisierung \\ 
+			\pbox{20cm}{2. reduziertes Geometriemodelle \\ \mbox{}\hspace{0.4cm}(z. B. teilweise vereinfachte Geometrie) } & DMU, Zulieferkette \\ 
+			\pbox{20cm}{3. detaillierte Geometriemodelle \\ \mbox{}\hspace{0.4cm}(z. B. isolierte Geometrie)} & Zeichnungen, Simulationen \\ 
+		 	4. parametrische Modelle & Entwurf, Entwicklung \\ 
+			5. Nutzer features & Design-Prozess \\ 
+			6. Vorlagenmodelle & Fortgeschrittenes design \\ 
+			7. Skelett- und adaptive Modelle  & Design in context \\ 
+		\end{tabular}
 \subsection{Assembling and product structures}
 	\item Welche Elemente sind in Baumstruktur (Übersicht)\\
 		P.2 F.51
+		\begin{itemize}
+			\item Teil-Nummer / Name der Komponente
+				\begin{itemize}
+					\item Axen Systeme
+					\item Parameter / Beziehungen
+					\item Eingabedaten / externe Geometrien
+						\begin{itemize}
+							\item Styling Surface
+							\item Adapter Geometry
+							\item externe Begrenzungen, etc.
+						\end{itemize}
+					\item Referenzelemente
+						\begin{itemize}
+							\item Referenzpunkte, -linien, -flächen
+							\item Referenzskizzen, -gitterelemente
+						\end{itemize}
+					\item Standards und Informationen
+						\begin{itemize}
+							\item Demold
+							\item Informationen bzgl. Produktion
+							\item Anmerkungen, etc.
+						\end{itemize}
+					\item Definition der Geometrie
+						\begin{itemize}
+							\item Part Geometrie
+								\begin{itemize}
+									\item grundlegende Geometrie
+									\item Wellen/Furchen
+									\item Flanschen
+									\item Taschen
+									\item etc.
+								\end{itemize}
+							\item Schnittflächen
+							\item geschnittene Teilgeometrie
+						\end{itemize}
+					\item Veröffentlichung der finalen Oberfläche
+					\item Berechnungen und Maße
+						\begin{itemize}
+							\item Gewicht, Fläche, etc.
+						\end{itemize}
+				\end{itemize}
+		\end{itemize}
 	\item Wozu?
-	\item Was wird bei einer Baumgruppenkonstruktion gemacht? F.56
-	\item Wie werden komplexe Baugruppen organisiert? F.59
+\subsection{Aufbau und Produktstruktur}
+	\item Was wird bei einer Baumgruppenkonstruktion gemacht?\\
+		P.2 F.56\\
+		Aufbaudesign beinhaltet die Organisation und Verknüpfung von zahlreichen Komponenten und Modulen von Produkten\\
+		Aufbaudesign behandelt \vspace{-0.3cm}
+			\begin{itemize}
+				\item Positionierung von Komponenten
+				\item Definition von Verhältnis und Verknüpfungen zwischen Komponenten
+				\item Organisation von Mehr-Modell-Verknüpfungen
+				\item Organisation von Parameterstrukturen
+				\item Bereitstellung von Geometrie und Struktur für nachfolgende DMU-Prozesse
+				\item Bereitstellung von Geometriedaten für Montagebasierte-Simulation (z. B. MBS)
+				\item Interaktion mit PDM-Systemen
+			\end{itemize}
+	\item Wie werden komplexe Baugruppen organisiert? \\
+		P.2 F.59\\
+		Einteilung in Hierarchie-Ebenen\\
+		\includegraphics[scale=0.3]{hirarchie.png}
 	\item Methoden der Positionierung\\
 		P.2 F.61
+		\begin{enumerate}
+			\item Durch Beschränkungen
+			\item Durch ein oder mehrerer Skelettmodelle
+			\item Relativ zu einem Referenzkoordinatensystem
+		\end{enumerate}
 \section{Virtuelle Entwicklung mechatronischer Produkte}
 \subsection{Einleitung - Mechatronik}
 	\item Was ist Mechatronik?\\
@@ -372,7 +449,7 @@
 %	\item Nennen Sie Beispiele für hardwarebasierte und virtuelle Produktmodelle.
 %	\item Erklären Sie die Begriffe "physikalische Modellbildung" und "phänomenologische Modellbildung".
 %	\item Vergleichen Sie die Vorteile von computergestützter Simulation und hardware-basierter Entwicklung.
-%	\item Welche Verfahren zur Modellbildung werden bei folgenden Computer-gestützten Simulationsverfahren angewandt: FEM, MKS (MBS), 3D-CFD
+%	\item Welche Verfahren zur Modellbildung werden bei folgenden Computer-gestützten Simulationsverfahren angewandt: FEM, MKS (), 3D-CFD
 %	\item Nennen Sie Anwendungen in der Entwicklung mechatronischer Produkte für folgende computergestützte Simulationsverfahren: FEM, MKS (MBS), CFD
 %	\item Nennen Sie mind. 5 Beispiele für CAx-Workflows.
 %	\item Beschreiben Sie folgende CAx-Workflows: CAD – DMU, CAD – FEM, CAD – MKS (MBS).
