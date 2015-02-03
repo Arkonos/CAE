@@ -17,6 +17,126 @@
 %\setlength{\mathindent{2cm}}% you can set it back to 0cm (the default).
 \begin{enumerate}
 \section{Virtuelle Produktentwicklung}
+\subsection{Produktentwicklung - Einleitung}
+\item Lebenszyklus nennen und einen Abschnitt genauer \\
+	P.1 F.4
+		\begin{itemize}
+			\item Anforderungen
+				\begin{itemize}
+					\item Anforderungsanalyse
+					\item Anforderungserfassung
+				\end{itemize}
+			\item Produktplanung
+				\begin{itemize}
+					\item Programm-/Portfolio-Planung
+					\item Projektplan-, Team- \& Kosten-Festlegung
+				\end{itemize}
+			\item Entwicklung
+				\begin{itemize}
+					\item Mechanische Konstruktion
+					\item Elektrokonstruktion
+					\item Softwareentwicklung
+					\item Simulation, DMU/PMU
+					\item Absicherung/Versuche
+					\item Dokumentation
+				\end{itemize}
+			\item Prozessplanung
+				\begin{itemize}
+					\item Prozessplanung
+					\item Analgenplanung
+					\item Anlagenentwicklung
+					\item Einkauf
+					\item Simulation/Versuche
+				\end{itemize}
+			\item Produktion
+				\begin{itemize}
+					\item Herstellung
+					\item Zusammenbau
+					\item Qualitätssicherung
+				\end{itemize}
+			\item Betrieb
+				\begin{itemize}
+					\item Vertrieb
+					\item Service
+					\item Wartung und Reparatur
+				\end{itemize}
+			\item Recycling
+				\begin{itemize}
+					\item Recycling
+				\end{itemize}
+		\end{itemize}
+\item Was ist Produktentwicklung, welche 3 Unternehmensprozesse?\\
+	P.1 F.5-6
+	\begin{itemize}
+		\item Die Produktentwicklung umfasst alle Tätigkeiten, die das Produkt und sein zur Produktion, Betrieb und Entsorgung benötigtes Umfeld (Werkzeuge, Vorrichtungen, Maschinen, Anlagen...) über den Produktlebenszyklus beschreiben.
+		\item Das Ergebnis ist eine vollständige Produktdefinition (“Intellectual Product”), die aus der Produktstruktur, allen seinen zugehörigen Dokumenten und Konfigurationen besteht.
+		\item Prozesse
+			\begin{itemize}
+				\item Produkt Entwicklung (Engineering)
+				\item Produkt Herstellung, (Produktion, Beschaffung, Logistik)
+				\item Ressourcen (Personal, Finanzen, Anlagen, $\dots$)
+			\end{itemize}
+	\end{itemize}
+\item Kostenbeeinflussung / Kostenentstehung, wie beeinflusst sich das gegenseitig.\\
+	P.1 F.7\\
+	\begin{center}
+		\includegraphics[scale=0.4]{kosten.png}
+	\end{center}	
+\item Entwicklungszeit-Kosten/Gewinn\\
+	P.1 F.11\\
+	\begin{center}
+		\includegraphics[scale=0.4]{timetomarket.png}
+	\end{center}
+\item Software und Mechanik müssen miteinander arbeiten\\
+	P.1 F.12
+\item Was sind die Anforderungen and den Produktentwicklungsprozess?\\
+	P.1 F.19
+	\begin{itemize}
+		\item Entwicklungskosten senken
+		\item Entwicklungszeiten reduzieren
+		\item Qualität sicherstellen
+		\item Anforderungen an das Produkt erfüllen
+		\item "Total Cost of Ownership" gering halten
+		\item Kooperative Produktentwicklung erlauben
+		\item Innovationen, neue Produkte schaffen
+		\item Kreativität\item Freiräume erhöhen
+		\item Administration erleichtern
+		\item $\dots$
+	\end{itemize}
+\subsection{Virtuelle Produktentwicklung}
+\item Begrifflichkeiten: CAD, E-CAD, CASE, virtuelle Produkteinwicklung\\
+	P.1 F.27\\
+		\begin{itemize}
+			\item CAD: Coputer Aided Design
+			\item M-CAD: Rechnerunterstützte Mechanik-Konstruktion
+			\item E-CAD: Rechnerunterstützte Elektrokonstruktionen
+			\item CASE: Rechnerunterstütze Softwareentwicklung
+			\item virtuelle Produktenwicklung: Unter Virtueller Produktentwicklung wird die durchgehende Rechnerunterstützung bei
+der Produktentwicklung unter intensiver Anwendung von Simulations-und Validierungs-techniken auf der Basis digitaler realitätsnaher Modelle verstanden.
+		\end{itemize}
+\item Werkzeuge und Methode der VPE (Virtuellen Produktentwicklung)\\
+	P.1 F.34
+\item Effiziente Entwicklungsmethode (auf Basis der VPE)\\
+	P.1 F.35
+\subsection{CAx - Werkzeuge der Virtuellen Produktentwicklung}
+\item Development Process/Workflow Instrumente des Entwicklungsprozesses\\
+	P.1 F.43
+\item integrierte und offene Software\\
+	P.1 F.44
+\item Mock-up: Zusammenbau z.B. rapid prototyping modell\\
+	Digital MU: virtuell Mock up\\
+	virtual mU: DMU + Kinematik Simulation (Bsp)
+	P.1 F.46
+\item chain of development activities (die Zusammenarbeit)\\
+	P.1 F.48
+\item Definitionen\\
+	P.1 F.59
+\item 2 Arten von Datenaustausch\\
+	P.1 F.40
+\item Nenne die neutralen Datenformate\\
+	P.1 F.61
+\item Anforderungen an Datenaustausch\\
+	P.1 F.64
 \subsection{CAx - Methoden}
 	\item Semi empirisch-/physikalische Modelle/Simulation\\
 		P.1 F.69
@@ -25,6 +145,7 @@
 			\item physikalisch: physikalische Regeln und Axiome, mathematische Beschreibung eines Prozesses, numerische Lösung, Vorteil: physikalische Bedeutung
 			\item semi-empritisch: empirisch+physikalisches Modell zusammen
 		\end{itemize}
+	\item Vor-/Nachteile
 	\item Kirchhoff'sche Einteilung der Modellierung\\
 		P.1 F.71
 		\begin{center}
@@ -47,7 +168,7 @@
 	\item Welche Unterschiede zwischen den Typen
 	
 \subsection{Cax - Workflows}
-	\item Workflows beschreiben, Wie/Was läuft ab.
+	\item Workflows beschreiben, Wie/Was läuft ab.\\
 		P.1 F.88
 			\begin{itemize}
 				\item DMU (Digital Mock Up)
@@ -55,8 +176,8 @@
 						\item ditigale Dummies die eine vereinfachte Darstellung des Produktes beinhalten
 						\item inkludierte Information
 							\begin{itemize}
-								\item Produkt Geometrie (Volumen und/oder Oberflächen)
-								\item Produktstruktur
+								\item Geometrie des Produkts (Volumen und/oder Oberflächen)
+								\item Struktur des Produkts
 							\end{itemize}
 						\item dienen Kollisionsüberprüfung, Simulation von Zusammenbau und Montage, $\dots$
 						\item Als Grundlage für DMUs dienen vereinfachte 3D-CAD Daten des virtuellen Produkt Modells.
@@ -90,7 +211,7 @@
 						\item Nach der Simulation wird das Resultat ausgewertet. Änderungen werden an der "Master-" Geometrie im 3D-CAD Programm und nicht in der MBS-Software vorgenommen.
 					\end{itemize}
 			\end{itemize}
-	\item Prozessworkflow CAD-VR
+	\item Prozessworkflow CAD-VR \ Was ist VR?\\
 		P.1 F.101
 		\begin{itemize}
 			\item Virtual Reality beschreibt eine computergenerierte Umgebung welche als Benutzerinterface fungiert.
@@ -100,6 +221,8 @@
 			\item Das VRML-Datenformat (Virtual REality Modeling Language, 1994) wurde entwickelt um 3D-Modelle darzustellen und Nutzerbasierte Interaktionen zu integrieren.
 			\item VRML-Daten, welche vom 3D-CAD master-Modell abgeleitet werden inkludieren vereinfachte Geometrien ausschließlich in aktueller Ausführung, ohne Verlaufsdaten.
 		\end{itemize}
+	\item Was ist Rapid Prototyping?\\
+		P.1 F.105
 \subsection{Product Data Management}
 	\item Was ist PDM?\\
 		P.1 F.112
@@ -110,6 +233,11 @@
 			\item Hilft Organisationen den Daten- und Informationsfluss während des Entwicklungsprozesses zu organisieren.
 			\item Die Verwaltung des Daten-, Prozess-, und Dokumentenstroms über den gesamten Lebenszyklus bilden die Grundlage für die virtuelle Produktentwicklung.
 			\item Komplexe Produktstrukturen oder Variationen erzeugen zahlreiche Parameter und Informationen. Ein leistungsstarkes PDM System unterstützt den Datenaustausch zwischen den verschiedenen Phasen der Entwicklung.
+			\item Zusammengefasst
+				\begin{itemize}
+					\item Um die große Menge an Daten verwalten, verarbeiten und interpretieren zu können. (v.a. bei Produktvarianten)
+					\item Notwendig um Interaktionen der einzelnen Abteilungen zu vereinfachen.
+				\end{itemize}
 		\end{itemize}
 	\item Concepts of the virtual product development\\
 		P.1 F.116
