@@ -77,6 +77,7 @@
 				\item Ressourcen (Personal, Finanzen, Anlagen, $\dots$)
 			\end{itemize}
 	\end{itemize}
+\pagebreak
 \item Kostenbeeinflussung / Kostenentstehung, wie beeinflusst sich das gegenseitig.\\
 	P.1 F.7\\
 	\begin{center}
@@ -116,27 +117,86 @@ der Produktentwicklung unter intensiver Anwendung von Simulations-und Validierun
 		\end{itemize}
 \item Werkzeuge und Methode der VPE (Virtuellen Produktentwicklung)\\
 	P.1 F.34
+	\begin{itemize}
+		\item Produktbeschreibungswerkzeuge sind Computer-gestützte Werkzeuge, welche zur Modellbildung und Auslegung in den frühen Phasen und zur detaillierten Konstruktion, Optimierung und Absicherung in den späteren Phasen des Produktentwicklungsprozesses dienen.
+		\item Man unterscheidet zwischen \textbf{Konstruktionswerkzeugen} (Computer AidedDesign (CAD)) und \textbf{Berechnungs-/Simulationswerkzeugen} (Computer AidedEngineering (CAE)). Als Überbegriff wird in der Literatur auch CAx verwendet.
+		\item Infrastrukturwerkzeuge
+			\begin{itemize}
+				\item \textbf{ProductData Management (PDM)} Werkzeuge, die das Datenmanagement während des Produktlebenszyklus gewährleisten. Sie dienen in erster Linie zur Verwaltung aller während der Produktentwicklung entstehenden Modelle und Dokumente. Man spricht hier von IT-Werkzeugen des Produktdatenmanagements (PDM).
+				\item \textbf{ProductLife Cycle Management (PLM)} Unter PLM versteht man das Informationsmanagement im Produktlebenszyklus in einem umfassenderem Sinne. PLM ist mehr als die Funktionalität eines einzelnen IT-Werkzeugs.
+			\end{itemize}
+	\end{itemize}	
 \item Effiziente Entwicklungsmethode (auf Basis der VPE)\\
 	P.1 F.35
+	\begin{center}
+		\includegraphics[scale=0.4]{methoden.png}
+	\end{center}
+\pagebreak	
 \subsection{CAx - Werkzeuge der Virtuellen Produktentwicklung}
-\item Development Process/Workflow Instrumente des Entwicklungsprozesses\\
+\item Development Process/Workflow = Instrumente des Entwicklungsprozesses\\
 	P.1 F.43
+	\begin{itemize}
+		\item \textbf{Entwicklungsprozess}\\
+			Eine Abfolge gewisser Entwicklungsschritte zur Erreichung des Entwicklungsziels.
+		\item \textbf{Entwicklungs-workflow}\\
+			Eine kontrollierte Abfolge gewisser Computer-unterstützter Entwicklungsschritte unter Anwendung gewisser Entwicklungswerkzeuge ("CAx workflow")
+		\item Unterschied
+			\begin{itemize}
+				\item Der Prozess beschreibt \textbf{was} gemacht werden muss.
+				\item Der workflow beschreibt \textbf{wie} dies geschehen muss.
+			\end{itemize}
+	\end{itemize}
 \item integrierte und offene Software\\
 	P.1 F.44
-\item Mock-up: Zusammenbau z.B. rapid prototyping modell\\
-	Digital MU: virtuell Mock up\\
-	virtual mU: DMU + Kinematik Simulation (Bsp)
+\item CAx-Definitionen\\
 	P.1 F.46
+	\begin{itemize}
+		\item Mock-up: Physikalische Modelle (mock-up) oder Prototypen (funktionale Modelle) in tatsächlicher Größe für die Fahrzeugentwicklung ("PMU"). Teuer in der Herstellung. Bsp.: rapid prototyping modell
+		\item Digital MU: DMU-Modelle sind übliche, rein geometrische CAD-Modelle bei denen die geometrischen Volumen mit physikalischen Werkstoffkenngrößen der geplanten Produktteile so ergänzt bzw. erweitert werden, dass sich der resultierende Datensatz für die Einsetzung in computergestützte physikalische Simulationen eignen.\\
+			Ziele des DMUs sind das Ersetzen von physischen Versuchsmodellen (PMU) und die Bereitstellung verschiedener, aktueller und konsistenter Sichtweisen auf die Gestalt und Funktion eines Produktes.
+		\item virtual MU: DMU + Kinematik Simulation (Bsp)
+	\end{itemize}		
 \item chain of development activities (die Zusammenarbeit)\\
-	P.1 F.48
+	P.1 F.48\\
+	\begin{itemize}
+		\item Serielle Abfolge von Entwicklungsaktivitäten (einfach, aber langsam)
+		\item Parallele Entwicklungsaktivitäten ("SE")\\
+			Bedarf Planung und Strukturierung der Entwicklungsaufgaben, Definition von Schnittstellen und Kontrolle des gesamten Projektes.
+		\item Mehrfache Ausführung von Entwicklungsschritten (Iterationen).\\
+			Kann nicht vermieden werden, vor allem bei komplexen Entwicklungsaufgaben.
+	\end{itemize}
 \item Definitionen\\
 	P.1 F.59
+	\begin{center}
+		\includegraphics[scale=0.4]{cax.png}
+	\end{center}	
 \item 2 Arten von Datenaustausch\\
-	P.1 F.40
+	P.1 F.59-60\\
+	horizontaler/vertikaler Datenaustausch\\
+		Produktdaten müssen zwischen CAx Systemen ähnlichen Typs ausgetauscht und an den nächsten Entwicklungsschritt weitergereicht werden.
+			\begin{itemize}
+				\item Vertikaler Datenaustausch: Datenaustausch zwischen gleichwertigen Systemen. (z. B.: CAD $\rightarrow$ CAD)
+				\item Horizontaler Datenaustausch: Datenaustausch zwischen verschiedenen Systemen des Entwicklungsprozesses (z. B.: CAD $\rightarrow$ FEM)
+				\item Oft unidirektional da nur relevante Daten weitergegeben werden.
+			\end{itemize}
 \item Nenne die neutralen Datenformate\\
 	P.1 F.61
+	\begin{itemize}
+		\item IGES für Geometrie und Design Daten
+		\item VDAFS für free forming surfaces: pure spline approximations
+		\item STEP: \textbf{St}andard for the \textbf{E}xchange of \textbf{P}roduct Model Data, Modelldaten beinhalten auch den Verlauf der Entwicklungsschritte.
+	\end{itemize}
 \item Anforderungen an Datenaustausch\\
 	P.1 F.64
+	\begin{center}
+		\includegraphics[scale=1]{susi.png}
+	\end{center}
+	\begin{itemize}
+		\item Integrität: Die Befugnisse der Nutzer müssen Definiert und Kontrolliert sein um Zugriffskonflikte zu vermeiden.
+		\item Datenkonsistenz: Arbeitet mehr als ein Nutzer mit dem selben Modell, muss gewährleistet sein, dass alle am aktuellen Stand sind.
+		\item Robustheit: Fähigkeit der Soft- und Hardwaresysteme mit unerwarteten Verhältnissen zurecht zu kommen.
+		\item Kompatibilität: Wie groß ist der Aufwand beim verbinden verschiedener Soft- und Hardwaresysteme.
+	\end{itemize}
 \subsection{CAx - Methoden}
 	\item Semi empirisch-/physikalische Modelle/Simulation\\
 		P.1 F.69
@@ -193,7 +253,7 @@ der Produktentwicklung unter intensiver Anwendung von Simulations-und Validierun
 						\item Randbedigungen der Lasten (Kräfte, Momente, $\dots$), Einschränkungen (fixe Komponenten, Lager, $\dots$), Materialeigenschaften, Temperatur, etc. werden im FEM-Programm definiert.
 						\item Nach der Simulation wird das Resultat ausgewertet. Änderungen werden an der master-Geometrie im 3D-CAD Programm und nicht in der FEM-Software vorgenommen.
 					\end{itemize}
-\pagebreak
+
 				\item CFD (Computational Fluid Dynamics)
 					\begin{itemize}
 						\item CFD-Simulationen ermöglichen die Berechnung und Optimierung von Gas- und Flüssigkeitsströmungen.
@@ -202,6 +262,7 @@ der Produktentwicklung unter intensiver Anwendung von Simulations-und Validierun
 						\item Randbedingungen werden direkt im CFD-Programm festgelegt.
 						\item Nach der Simulation wird das Resultat ausgewertet. Änderungen werden an der "Master-" Geometrie im 3D-CAD Programm und nicht in der CFD-Software vorgenommen.
 					\end{itemize}
+
 				\item MBS (Mehrkörpersimulation)
 					\begin{itemize}
 						\item Genutzt für kinematische Berechnungen und Optimierung des zusammengebauten und beweglichen Produkts.
@@ -211,6 +272,7 @@ der Produktentwicklung unter intensiver Anwendung von Simulations-und Validierun
 						\item Nach der Simulation wird das Resultat ausgewertet. Änderungen werden an der "Master-" Geometrie im 3D-CAD Programm und nicht in der MBS-Software vorgenommen.
 					\end{itemize}
 			\end{itemize}
+\pagebreak
 	\item Prozessworkflow CAD-VR \ Was ist VR?\\
 		P.1 F.101
 		\begin{itemize}
@@ -239,9 +301,12 @@ der Produktentwicklung unter intensiver Anwendung von Simulations-und Validierun
 					\item Notwendig um Interaktionen der einzelnen Abteilungen zu vereinfachen.
 				\end{itemize}
 		\end{itemize}
+\pagebreak
 	\item Concepts of the virtual product development\\
 		P.1 F.116
-\pagebreak
+		\begin{center}
+			\includegraphics[scale=0.6]{foo,png}
+		\end{center}
 	\item Nennen Sie Daten die in einem PDM System verwaltet werden können
 		\begin{itemize}
 			\item Geometriedaten
@@ -276,10 +341,9 @@ der Produktentwicklung unter intensiver Anwendung von Simulations-und Validierun
 	 			\end{itemize}
 	 		\item Hybride Modelle
 	 	\end{itemize}
-	 \item Was ist ein Skelettmodell\\
+	 \item Was ist ein Skelettmodell und wie wird es angewandt?\\
 	 	P.2 F.14
-	 	s.o.
-	 \item Wie wird es angewandt?
+	 	Ein Skelettmodell dient zur Positionierung bzw. Lagebestimmung von Modulen und Komponenten. Es kann sowohl in der Bauteilkonstruktion (innerhalb eines Bauteils), als auch in der Baugruppe verwendet werden. Oft werden komplexe Baugruppen, welche eine Anzahl an Teilen beinhalten, durch ein Skelettmodell organisiert, d.h. die Teile werden nicht (nur) relativ zueinander positioniert, sondern relativ zum Skelettmodell. Oft besteht ein Skelettmodell aus Punkten, Linien, Ebenen und Achsensystemen. 
 	 \item Anwendung von Bool'schen Operationen bezogen auf Produktion\\
 	 	P.2 F.25,27
 	 	\begin{itemize}
@@ -357,7 +421,8 @@ der Produktentwicklung unter intensiver Anwendung von Simulations-und Validierun
 			\item automatisierte Abläufe für die geometrische Erzeugung oder berechnende Prozeduren
 			\item interaktive Programme
 		\end{itemize}
-	\item Was ist eine Template?
+	\item Was ist eine Template?\\
+		Unter einem Template versteht man eine Wissensvorlage. In Bezug auf CAD sind Templates meist (mehr oder weniger) variable Modelle, welche ihre geometrischen Abmessungen je nach konkretem Anwendungsfall verändern können. Template-Modelle sind Wissensträger, da sie Informationen bezüglich Konstruktionsmethodik, geometrischer Ausprägung und / oder fertigungsrelevanter Aspekte enthalten können. Aus diesem Grund werden Templates mit Hilfe von wissensbasierten Konstruktionsmethoden (knowledge-based design KBD) entwickelt. 
 %	\item Adapive Modelle z.B. 
 	\item Levels of knowledge content in CAD models\\
 		P.2 F.49\\
@@ -406,7 +471,6 @@ der Produktentwicklung unter intensiver Anwendung von Simulations-und Validierun
 									\item Wellen/Furchen
 									\item Flanschen
 									\item Taschen
-									\item etc.
 								\end{itemize}
 							\item Schnittflächen
 							\item geschnittene Teilgeometrie
@@ -419,6 +483,7 @@ der Produktentwicklung unter intensiver Anwendung von Simulations-und Validierun
 				\end{itemize}
 		\end{itemize}
 	\item Wozu?
+	Die Vorgabe einer Baumstruktur in Form von Startmodellen stellt sicher, dass alle CAD Modelle kompatibel und nachvollziehbar aufgebaut sind. Diese spielt nicht nur bei der Weitergabe der CAD Modelle an andere Konstrukteure eine Rolle, sondern auch bei der Datenverwaltung. PDM-Systeme können automatisiert auf einzelne Bereiche des Strukturbaums zugreifen, um z.B. Geometriemodelle für DMU-Anwendungen auszulesen, oder Eigenschaften (z.B. Bauteilmasse) zu übernehmen. 
 \subsection{Aufbau und Produktstruktur}
 	\item Was wird bei einer Baumgruppenkonstruktion gemacht?\\
 		P.2 F.56\\
@@ -474,6 +539,7 @@ der Produktentwicklung unter intensiver Anwendung von Simulations-und Validierun
 		\begin{center}
 			\includegraphics[scale=0.5]{v.png}
 		\end{center}
+\pagebreak
 \subsection{Komponenten mechatronischer Systeme}
 	\item Übersicht Komponenten\\
 		P.3 F.17
@@ -484,14 +550,15 @@ der Produktentwicklung unter intensiver Anwendung von Simulations-und Validierun
 		P.3 F.18\\
 		\begin{center}
 			\includegraphics[scale=0.5]{regelkreis.PNG}
-		\end{center}		
+		\end{center}
+\pagebreak
 	\item Definition Aktor, Sensor, Prozessdatenverarbeitung
 		\begin{itemize}
 		 	\item Aktoren: P.3 F.19-23\\
 		 		Technisch gesehen versteht man unter einem Aktor die Zusammenschaltung eines Energiewandlers mit einem Leistungsstellglied.\\
 		 		Das Leistungsstellglied verbindet die eingehende Energie (in der Regel elektrische Energie) mit dem Stellsignal. Es entsteht eine modulierte Energie, die vom Wandler in die Energieart der Stellgröße (meist mechanische Energie) transformiert wird.\\
 				In mechatronischen Systemen stellen Aktoren das Bindeglied zwischen der Informationsverarbeitung und dem mechanischen Grundsystem dar.
-\pagebreak
+%\pagebreak
 		 	\item Sensoren: P.3 F.24-28\\
 		 		Sensoren wandeln die zu messenden physikalischen oder chemischen Größen in elektrische Signale um.\\
 				Ein Signal stellt in diesem Sinne eine zeitvariable, physikalische oder chemische Zustandsgröße (z.B. Druck, Temperatur, Kraft, usw.) als zeitliche Abfolge von Messwerten dar.\\
